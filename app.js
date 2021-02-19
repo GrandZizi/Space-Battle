@@ -56,8 +56,14 @@ const player = {
 	hull: 30,
 	firepower: 5,
 	accuracy: 7,
+	// shield: 5,
+	// 'max-shield': 15
 };
 
+//shooter function works by decreasing the range of numbers that can be generated
+//the set range will be 10, so if accuracy is 7 the range of numbers is 3 (8-10)
+//fireChance will random generate a num through that range and if it matches
+//shooter() will return the ships fire power, if not return 0
 // takes a num, alien object and player object
 function shooter(acc, ship, enemyShip) {
 	//calculates a chance num for user to hit from  their accuracy
@@ -74,7 +80,7 @@ function shooter(acc, ship, enemyShip) {
 let yesOrNo = prompt('Welcome to Space Battle, ready to play? (yes/no)');
 while (yesOrNo === 'yes') {
 	alert(
-		'There is an alien fleet heading to Earth. Only you can prevent this armaggedon. The alien fleet consist of six ships: scouts, rapid fire, cannon and The Mother-Ship'
+		'There is an alien fleet heading to Earth. Only you can prevent this armaggedon. The alien fleet consist of different type ships: scouts, rapid fire, cannon and The Mother-Ship'
 	);
 	alert(
 		'After you destroy each ship, another one will appear in order to defend the mother ship'
