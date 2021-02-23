@@ -26,7 +26,7 @@ class Player {
 	}
 }
 //creates the player with 30px radius and color red
-const player = new Player(centerX, centerY, 30, 'red');
+const player = new Player(200, 300, 30, 'red');
 player.draw();
 
 // =================================================
@@ -164,7 +164,7 @@ addEventListener('click', (e) => {
 	console.log(beams);
 
 	// calcus the angle from where player clicks
-	const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+	const angle = Math.atan2(e.clientY - player.y, e.clientX - player.x);
 
 	const velocity = {
 		x: Math.cos(angle),
@@ -172,7 +172,7 @@ addEventListener('click', (e) => {
 	};
 
 	// pushes a new beam object into the beams arr for animation
-	beams.push(new Beam(centerX, centerY, 5, 'red', velocity));
+	beams.push(new Beam(player.x, player.y, 5, 'red', velocity));
 });
 
 spawnAliens();
