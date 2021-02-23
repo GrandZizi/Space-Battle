@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            bo
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas></canvas>
+    <h1>Space invaders</h1>
+    <div class="dialogue">
+        <p class="dialogue-text">Welcome to Space Invaders, click the continue button to save the world</p>
+        <button class="continue">continue</button>
+    </div>
+    <div class="action">
+        <ul>
+            <li>Player Health<p id="player-health"></p></li>
+            <li>Alien Ship Health<p id="alien-health"></p></li>
+        </ul>
+        <button class="button">attack</button>
+    </div>
+    <p class="action" id="missed-text">you missed</p>
+    <p class="action" id="hit-text">hit</p>
+    <p class="action" id="alienship-destroyed">alien ship destroyed</p>
+    <p class="action" id="player-destroyed">you were destroyed</p>
     
-    <script src="canvas.js"></script>
-    <!-- <script src="app.js"></script> -->
+    
+
+    <script src="app.js"></script>
 </body>
 </html>
