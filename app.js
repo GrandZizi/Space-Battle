@@ -1,11 +1,11 @@
+const canvas = document.querySelector('canvas');
 class Alien {
 	//values can be changed to vary types of beams
-	constructor(x, y, radius, color, velocity) {
+	constructor(x, y, radius, color) {
 		this.x = x;
 		this.y = y;
 		this.radius = radius;
 		this.color = color;
-		this.velocity = velocity;
 	}
 
 	draw() {
@@ -13,12 +13,6 @@ class Alien {
 		c.arc(this.x, this.y, this.radius, Math.PI * 2, false);
 		c.fillStyle = this.color;
 		c.fill();
-	}
-	//when called it will redraw the beam and increase its position
-	update() {
-		this.draw();
-		this.x += this.velocity.x;
-		this.y += this.velocity.y;
 	}
 }
 
@@ -28,28 +22,31 @@ const alienFleet = [
 		hull: 12,
 		firepower: 6,
 		accuracy: null,
-		drawing: new Alien(1,1,1,'blue',{x:1,y:1})
+		drawing: new Alien(canvas.width - canvas.width/6, canvas.height / 2, 13, 'purple'),
 	},
 	{
 		type: 'heavy',
 		hull: 7,
 		firepower: 4,
 		accuracy: null,
+		drawing: new Alien(canvas.width - canvas.width/6, canvas.height / 2, 10, 'green'),
 	},
 	{
 		type: 'light',
 		hull: 4,
 		firepower: 3,
 		accuracy: null,
+		drawing: new Alien(canvas.width - canvas.width/6, canvas.height / 2, 7, '#add8e6'),
 	},
 	{
 		type: 'scout',
 		hull: 2,
 		firepower: 2,
 		accuracy: null,
-	},
+		drawing: new Alien(canvas.width - canvas.width/6, canvas.height / 2, 5, 'brown'),
+	}
 ];
-console.log(alienFleet[0].drawing);
+
 //range for the arr
 let range = Math.floor(Math.random() * 5) + 4;
 // console.log(`range ${range}`);
@@ -133,8 +130,10 @@ contBtn.addEventListener('click', (e) => {
 // console.log(alienFleet);
 shipsIndex = alienFleet.length - 1;
 
-
+let alien2Draw
+console.log(alien2Draw);
 attackbtn.addEventListener('click', e => {
+	alien2Draw = alienFleet[shipsIndex].drawing;
 	playerHealthText.innerText = player.hull;
 	alienShipHealth.innerText = alienFleet[shipsIndex].hull;
 	let playerAction = shooter(player.accuracy, player, alienFleet[shipsIndex]);
@@ -180,7 +179,7 @@ attackbtn.addEventListener('click', e => {
 });
 
 // ===================================================================
-const canvas = document.querySelector('canvas');
+
 const c = canvas.getContext('2d');
 
 class Player {
@@ -198,6 +197,7 @@ class Player {
 		c.fill();
 	}
 }
+
 
 class Beam {
 	//values can be changed to vary types of beams
@@ -255,8 +255,9 @@ function animate() {
 	c.fillRect(0, 0, 1000, 1000);
 	let player = new Player(canvas.width / 6, canvas.height / 2, 10, 'red');
 	player.draw();
-	let alien = new Alien(canvas.width - canvas.width/6, canvas.height / 2, 10, 'purple');
-	alien.draw();
+	// let alien = new Alien(canvas.width - canvas.width/6, canvas.height / 2, 10, 'purple');
+	// alien.draw();
+	alien2Draw.draw()
 	
 
 	beams.forEach(beam => beam.update())
