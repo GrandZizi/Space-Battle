@@ -5,27 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Space invaders</h1>
     <div class="dialogue">
         <p class="dialogue-text">Welcome to Space Invaders, click the continue button to save the world</p>
-        <button class="continue">continue</button>
+        <button class="continue nes-btn is-primary">continue</button>
     </div>
     <div class="action">
         <ul>
-            <li>Player Health<p id="player-health"></p></li>
-            <li>Alien Ship Health<p id="alien-health"></p></li>
+            <li>Player Health</li><p id="player-health"></p>
+            <li id="alien-type">Alien Ship Health</li><p id="alien-health"></p>
         </ul>
         
     </div>
-    <canvas></canvas>
     <button class="attack-button">attack</button>
-    <p class="action" id="missed-text">you missed</p>
-    <p class="action" id="hit-text">hit</p>
-    <p class="action" id="alienship-destroyed">alien ship destroyed</p>
-    <p class="action" id="player-destroyed">you were destroyed</p>
+    <div class="alert nes-container is-rounded is-dark">
+        <p class="title">notice</p>
+        <p class="action" id="missed-text">you missed</p>
+        <p class="action" id="hit-text">hit</p>
+        <p class="action" id="alienship-destroyed">alien ship destroyed</p>
+        <p class="action" id="player-destroyed">you were destroyed</p>
+        <button class="close">close</button>
+    </div>
+    <canvas></canvas>
+    
+    
+    
     
     
 
