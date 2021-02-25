@@ -6,7 +6,7 @@ A simple space battle simulation, attacking is based on chance. An Alien Fleet i
 
 ## Unsolved Problems
 - TypeError: A TypeError is thrown due to draw function being called on a undefined alien2Draw object. It is solved once the user clicks the attack button as a alien2Draw object is finally passed.
-- TypeErroe: In some cases, rShip is undefined causing to throw a TypeError
+- TypeError: In some cases, rShip is undefined causing to throw a TypeError
 - Alien does not appear until user clicks the attack button
 - beams simply pass through the alien and player objects
 
