@@ -1,6 +1,5 @@
 const canvas = document.querySelector('canvas');
 class Alien {
-
 	constructor(x, y, radius, color) {
 		this.x = x;
 		this.y = y;
@@ -125,12 +124,12 @@ const missedText = document.querySelector('#missed-text');
 const alienDestroyedText = document.querySelector('#alienship-destroyed');
 const playerDestroyedText = document.querySelector('#player-destroyed');
 const attackbtn = document.querySelector('.attack-button');
-const close = document.querySelector('.close')
-const notice = document.querySelector('.alert')
-const alienType = document.querySelector('#alien-type')
+const close = document.querySelector('.close');
+const notice = document.querySelector('.alert');
+const alienType = document.querySelector('#alien-type');
 notice.addEventListener('click', () => {
-	notice.style.display = 'none'
-})
+	notice.style.display = 'none';
+});
 
 //texts to display
 const texts = [
@@ -150,14 +149,13 @@ contBtn.addEventListener('click', () => {
 		dialogue.style.display = 'none';
 		action.style.display = 'block';
 		canvas.style.display = 'block';
-		attackbtn.style.display = 'block'
+		attackbtn.style.display = 'block';
 		playerHealthText.innerText = player.hull;
-		alienType.innerText = `Alien ${alienFleet[shipsIndex].type} Ship Health`
-		alienShipHealth.innerText = alienFleet[alienFleet.length - 1].hull
+		alienType.innerText = `Alien ${alienFleet[shipsIndex].type} Ship Health`;
+		alienShipHealth.innerText = alienFleet[alienFleet.length - 1].hull;
 	}
 	textCount++;
 });
-
 
 //used to draw the following alien ship
 let alien2Draw;
@@ -286,7 +284,7 @@ function animate() {
 	alien2Draw.draw();
 
 	beams.forEach((beam) => {
-		beam.update()
-	});	
+		beam.update();
+	});
 }
 animate();
